@@ -4,7 +4,7 @@ import Textform from './components/Textform'
 import About from './components/About'
 import { useState } from 'react'
 import Alert from './components/Alert'
-import { BrowserRouter as Router,Routes,Route} from 'react-router-dom'
+// import { BrowserRouter as Router,Routes,Route} from 'react-router-dom'
 function App()
 {
 
@@ -20,7 +20,7 @@ function App()
 
       setTimeout(()=>{
         setalert(null);
-      },1500)
+      },2000)
   }
   const changemode = () =>{
     if(mode === 'dark')
@@ -59,24 +59,30 @@ function App()
   }
 
   return(
-    <Router>
-      <div>
-        <NavBar title="TextUtils" about="About" mode={mode} changemode2={changemode2} changemode = {changemode}/>
-        <Alert alert={alert}/>
-        <br/>
+    // <Router>
+    //   <div>
+    //     <NavBar title="TextUtils" about="About" mode={mode} changemode2={changemode2} changemode = {changemode}/>
+    //     <Alert alert={alert}/>
+    //     <br/>
         
-        <Routes>
-            {/* <Route path="/about">
-              <About />   
-            </Route>
-            <Route  path="/">
-              <Textform mode={mode} showalert={showalert}/>
-            </Route> */}
-          <Route exact path="/" element={<Textform mode={mode} showalert={showalert}/>} />
-          <Route path="/about" element={<About mode={mode}/>} />
-        </Routes>       
-      </div>  
-    </Router>
+    //     <Routes>
+    //         {/* <Route path="/about">
+    //           <About />   
+    //         </Route>
+    //         <Route  path="/">
+    //           <Textform mode={mode} showalert={showalert}/>
+    //         </Route> */}
+    //       <Route exact path="/" element={<Textform mode={mode} showalert={showalert}/>} />
+    //       <Route path="/about" element={<About mode={mode}/>} />
+    //     </Routes>       
+    //   </div>  
+    // </Router>
+    <div>
+    <NavBar title="TextUtils" about="About" mode={mode} changemode2={changemode2} changemode = {changemode}/>
+     <Alert alert={alert}/>
+        <br/>
+         <Textform mode={mode} showalert={showalert}/>
+   </div>
   );
 }
 
